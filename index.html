@@ -11,12 +11,10 @@
 <!-- 🔃 PRELOADER -->
 <div id="preloader">
   <div class="heart-loader"></div>
-  <p>Loading Love...</p>
+  <p>Click once anywhere to play music❤️</p>
 </div>
 
-<video autoplay loop muted playsinline class="bg-video">
-  <source src="258220_small.mp4" type="video/mp4">
-</video>
+<audio id="bikeSound" src="Audio 2025-06-04 at 18.46.31_0f0c327a.mp3" loop></audio>
 
 <!-- 🔥 SLIDESHOW -->
 <div class="slideshow-container">
@@ -39,6 +37,16 @@
 </audio>
 
 <script>
+   // Audio
+  const sound = document.getElementById('bikeSound');
+
+    document.addEventListener('click', function () {
+      if (sound.paused) {
+        sound.play();
+      } else {
+        sound.pause();
+      }
+    });
   // Preloader hide after 3 sec
   window.addEventListener("load", function () {
     setTimeout(() => {
