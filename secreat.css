@@ -81,6 +81,7 @@ body {
   display: block;
 }
 
+
 .overlay-text {
   position: absolute;
   top: 5%;
@@ -99,6 +100,6 @@ body {
 
   .slide {
     max-width: 95vw;
-    max-height: 70vh;
+    max-height: 60vh; /* pehle 80vh tha, ab 60vh taaki mobile mein chhoti lage */
   }
 }
