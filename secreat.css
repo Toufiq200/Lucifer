@@ -58,23 +58,26 @@ body {
 /* Slideshow */
 .slideshow-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 20px 0; /* Mobile ke liye spacing */
 }
 
 .slide {
-  position: absolute;
-  max-width: 90vw;
-  max-height: 80vh;
-  object-fit: contain;
+  position: relative; /* 👈 Important: absolute hata de */
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   display: none;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  z-index: 2;
+  margin: 0 auto;
 }
 
 .slide.active {
@@ -94,12 +97,13 @@ body {
 }
 
 @media (max-width: 768px) {
-  .overlay-text {
-    font-size: 1.2rem;
+  .slide {
+    max-width: 90vw;
+    height: auto;
   }
 
-  .slide {
-    max-width: 95vw;
-    max-height: 60vh; /* pehle 80vh tha, ab 60vh taaki mobile mein chhoti lage */
+  .overlay-text {
+    font-size: 1.1rem;
+    top: 3%;
   }
 }
